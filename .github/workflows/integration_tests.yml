@@ -13,7 +13,7 @@ jobs:
         image: alpine:latest
         ports:
           - 8085:8085
-        options: -t
+        options: -t nc -l 8085
     steps:
       - name: Test
-        run: ping slack_mock -c 1
+        run: curl slack_mock:8085
