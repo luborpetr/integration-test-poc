@@ -13,7 +13,7 @@ jobs:
         image: alpine:latest
         ports:
           - 8085:8085
-        options: -t nc -l 8085
+        options: echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l -p 8085 -q 1
     steps:
       - name: Test
         run: curl slack_mock:8085
