@@ -10,7 +10,7 @@ jobs:
     runs-on: [ubuntu-latest]
     services:
       slack_mock:
-         image: alpine:latest
+        image: alpine:latest
         ports:
           - 8085:8085
         options:
