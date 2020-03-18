@@ -5,16 +5,16 @@ on:
   pull_request:
     types: [opened]
 
-  jobs:
-    test_notifications:
-      runs-on: [ubuntu-latest]
-      services:
-        slack_mock:
-          image: alpine:latest
-          ports:
-            - 8085:8085
-          options:
-            - t
-      steps:
-        - name: Test
-          run: ping slack_mock -c 1
+jobs:
+  test_notifications:
+    runs-on: [ubuntu-latest]
+    services:
+      slack_mock:
+         image: alpine:latest
+        ports:
+          - 8085:8085
+        options:
+          - t
+    steps:
+      - name: Test
+        run: ping slack_mock -c 1
